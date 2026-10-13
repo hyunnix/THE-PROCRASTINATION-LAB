@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A tiny interactive experiment about procrastination. Explore how difficulty, motivation, and distraction affect a fictional readiness score.">
+  <title>The Procrastination Lab — Why Am I Not Starting?</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#experiment">Skip to the experiment</a>
+  <header class="site-header">
+    <a class="wordmark" href="#"><span aria-hidden="true">✳</span> THE PROCRASTINATION LAB</a>
+    <span class="header-note">a little less doing. a little more wondering.</span>
+    <span class="edition">EXPERIMENT № 001</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> WELCOME TO YOUR BRAIN'S WAITING ROOM</p>
+        <h1 id="page-title">WHY AM I<br>NOT <span class="starting">STARTING?<svg viewBox="0 0 500 28" preserveAspectRatio="none" aria-hidden="true"><path d="M5 17 Q180 -2 492 13 M30 26 Q240 8 460 23"/></svg></span></h1>
+        <p class="intro-subtitle">A tiny interactive experiment about the things<br class="desktop-break"> that stop us from starting.</p>
+        <p class="intro-description">We all have things we want to do. So why do we sometimes put them off? Adjust the variables below to explore one simplified model of procrastination.</p>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <span class="orbit-star">✧</span>
+        <div class="sticky-note"><span class="tape"></span><span class="note-label">TODAY'S TO-DO</span><span class="todo"><i></i> start the thing</span><span class="todo crossed"><i>✓</i> think about the thing</span><span class="note-script">…does this count?</span><svg viewBox="0 0 140 45"><path d="M8 8 Q65 45 124 13 M108 10 L128 11 L120 28"/></svg></div>
+        <span class="round-sticker">100%<br><small>WORK IN<br>PROGRESS</small></span>
+        <span class="tiny-heart">♡</span>
+      </div>
+    </section>
+
+    <section id="experiment" class="experiment" aria-label="Interactive procrastination experiment">
+      <div class="section-kicker"><span>01 / ADJUST. OBSERVE. REPEAT.</span><span>no lab coat required ↙</span></div>
+      <div class="lab-grid">
+        <section class="window controls" aria-labelledby="controls-title">
+          <div class="window-bar"><span><span aria-hidden="true">☷</span> brain_settings.exe</span><span class="window-glyphs" aria-hidden="true">− □ ×</span></div>
+          <div class="window-content">
+            <div class="panel-heading"><h2 id="controls-title">Set the scene.</h2><span class="pill">INPUT</span></div>
+            <p class="panel-description">What's going on in your head today?</p>
+            <div class="slider-group"><div class="slider-heading"><label for="difficulty"><span class="variable-icon" aria-hidden="true">↗</span> Task Difficulty</label><output for="difficulty" id="difficulty-value">6<span>/10</span></output></div><input type="range" id="difficulty" min="1" max="10" value="6" step="1"><div class="range-labels"><span>Easy</span><span>Overwhelming</span></div></div>
+            <div class="slider-group"><div class="slider-heading"><label for="motivation"><span class="variable-icon" aria-hidden="true">♡</span> Motivation</label><output for="motivation" id="motivation-value">4<span>/10</span></output></div><input type="range" id="motivation" min="1" max="10" value="4" step="1"><div class="range-labels"><span>Not motivated</span><span>Super motivated</span></div></div>
+            <div class="slider-group"><div class="slider-heading"><label for="distraction"><span class="variable-icon" aria-hidden="true">✳</span> Distraction</label><output for="distraction" id="distraction-value">5<span>/10</span></output></div><input type="range" id="distraction" min="1" max="10" value="5" step="1"><div class="range-labels"><span>Focused</span><span>Very distracted</span></div></div>
+            <p class="control-tip"><span aria-hidden="true">↔</span> Move a slider. See what shifts.</p>
+          </div>
+        </section>
+        <section class="window observation" data-state="avoiding" aria-labelledby="observation-title">
+          <div class="window-bar"><span><span aria-hidden="true">✧</span> live_observation.exe</span><span class="live-label"><span class="status-dot" aria-hidden="true"></span> LIVE</span></div>
+          <div class="observation-content">
+            <div class="observation-top"><h2 id="observation-title">Readiness to begin</h2><span id="state-label" class="pill">AVOIDING</span></div>
+            <div class="readiness-number"><span id="score">30</span><span class="percent">%</span><span class="score-annotation">of fictional<br>starting energy</span></div>
+            <div id="readiness-meter" class="progress-track" role="progressbar" aria-label="Fictional readiness to begin" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30"><div class="progress-fill"></div></div>
+            <div class="meter-labels"><span>NOT TODAY</span><span>LET'S GO!</span></div>
+            <div class="character-stage" aria-hidden="true">
+              <span class="character-decoration deco-left">z</span><span class="character-decoration deco-right">z Z</span>
+              <svg class="character" viewBox="0 0 280 190" fill="none">
+                <ellipse cx="140" cy="176" rx="78" ry="9" fill="#171319" opacity=".08"/>
+                <g class="character-body" stroke="#171319" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M101 147 Q81 167 94 172 L113 172 M177 147 Q196 166 184 172 L166 172" fill="#ED679F"/>
+                  <path d="M74 109 Q46 110 50 132 Q59 138 69 124 M207 108 Q232 100 229 125 Q223 136 214 125" fill="#F7B9D1"/>
+                  <path d="M65 105 C63 59 91 28 135 30 C167 7 206 40 203 70 C235 95 211 154 178 157 C135 181 68 159 65 105Z" fill="#F7B9D1"/>
+                  <path d="M124 36 Q129 49 120 61 M158 31 Q149 48 163 58" stroke="#A93C70" stroke-width="2" opacity=".45"/>
+                  <ellipse cx="99" cy="114" rx="12" ry="6" fill="#ED679F" stroke="none" opacity=".55"/><ellipse cx="180" cy="114" rx="12" ry="6" fill="#ED679F" stroke="none" opacity=".55"/>
+                  <g class="face face-ready"><path d="M106 94 Q114 80 121 94 M158 94 Q166 80 174 94"/><path d="M124 112 Q141 143 158 112Z" fill="#171319"/><path d="M133 122 Q141 119 149 124" stroke="#ED679F" stroke-width="5"/></g>
+                  <g class="face face-hesitating"><ellipse cx="115" cy="94" rx="3" ry="6" fill="#171319"/><ellipse cx="163" cy="94" rx="3" ry="6" fill="#171319"/><path d="M106 77 L119 73 M158 73 L174 79 M130 123 Q143 117 154 122"/></g>
+                  <g class="face face-avoiding"><path d="M103 95 Q113 102 122 95 M157 95 Q168 102 177 95"/><ellipse cx="141" cy="122" rx="6" ry="8" fill="#171319"/></g>
+                </g>
+              </svg>
+              <span class="character-caption">specimen: a very relatable brain</span>
+            </div>
+            <div class="reaction"><h3 id="reaction-message">Suddenly, cleaning my desk sounds important.</h3><p id="reaction-support">Starting feels difficult in this situation.</p><span id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span></div>
+          </div>
+          <div class="observation-footer"><span aria-hidden="true">♡</span> An experiment, not a diagnosis. You're more than a number.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="presets" aria-labelledby="presets-title">
+      <div class="preset-intro"><p class="eyebrow">02 / CHANGE THE CONDITIONS</p><h2 id="presets-title">TRY AN <br><em>EXPERIMENT</em> <span aria-hidden="true">↗</span></h2><p>Same brain. Different circumstances.</p></div>
+      <div class="preset-buttons">
+        <button class="preset" data-preset="deadline" aria-pressed="false"><span class="preset-icon" aria-hidden="true">⌁</span><span class="preset-name">Deadline Panic</span><span class="preset-description">It's due. Like, really due.</span><span class="preset-values">DIFF 9 · MOT 5 · DIST 8 <span aria-hidden="true">↗</span></span></button>
+        <button class="preset" data-preset="morning" aria-pressed="false"><span class="preset-icon" aria-hidden="true">☼</span><span class="preset-name">Productive Morning</span><span class="preset-description">Fresh coffee. Fresh intentions.</span><span class="preset-values">DIFF 3 · MOT 9 · DIST 2 <span aria-hidden="true">↗</span></span></button>
+        <button class="preset" data-preset="scroll" aria-pressed="false"><span class="preset-icon" aria-hidden="true">♡</span><span class="preset-name">Just One More Scroll</span><span class="preset-description">Wait, how is it already 4 pm?</span><span class="preset-values">DIFF 6 · MOT 2 · DIST 10 <span aria-hidden="true">↗</span></span></button>
+      </div>
+    </section>
+
+    <section class="reflection" aria-labelledby="reflection-title">
+      <div class="reflection-copy"><p class="eyebrow">03 / A NOTE FROM THE LAB</p><h2 id="reflection-title">WHAT DOES THIS MODEL<br>ACTUALLY <em>SHOW?</em></h2><p>This simulation simplifies procrastination into three adjustable variables. Real procrastination is more complex and may involve emotions, context, habits, and individual differences. The readiness score is an illustrative output, not a measurement of a person's actual psychology.</p><button id="reset" class="reset-button"><span aria-hidden="true">↺</span> Reset the experiment</button></div>
+      <div class="model-note"><p class="note-label">UNDER THE HOOD / THE RULE</p><code>50 + (motivation × 6)<br>&nbsp;&nbsp; − (difficulty × 4)<br>&nbsp;&nbsp; − (distraction × 4)</code><p>Keep the result between 0 and 100.<br>A design choice, not a psychological formula.</p><details><summary>The computational thinking behind it <span aria-hidden="true">+</span></summary><dl><dt>Decomposition</dt><dd>Break the phenomenon into difficulty, motivation, and distraction.</dd><dt>Pattern recognition</dt><dd>Compare combinations. In this model, more motivation raises readiness; more difficulty or distraction lowers it.</dd><dt>Abstraction</dt><dd>Represent a complex experience with three numbers and three visual states.</dd><dt>Algorithm design</dt><dd>Read inputs, calculate, clamp, choose a state, and update the screen. Repeat after each change.</dd></dl></details></div>
+    </section>
+    <noscript><p class="noscript">Enable JavaScript to use the sliders and simulation. The model and its explanation are still available to read.</p></noscript>
+  </main>
+  <footer class="site-footer"><span>THE PROCRASTINATION LAB <span aria-hidden="true">✳</span></span><span>A conceptual experiment · MSTU 5003/5013</span><span>Made for curious minds. ♡</span></footer>
+</body>
+</html>
